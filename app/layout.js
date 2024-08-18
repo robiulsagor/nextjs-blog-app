@@ -7,7 +7,7 @@ const outfit = Outfit({
 });
 
 export const metadata = {
-  title: "Nextjs Blog",
+  title: "Most Popular Blog",
   description: "Most popular blog website",
 };
 
