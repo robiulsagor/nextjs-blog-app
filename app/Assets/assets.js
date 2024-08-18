@@ -6,6 +6,7 @@ import blog_pic_13 from "./13.jpeg";
 import blog_pic_14 from "./14.jpeg";
 import blog_pic_15 from "./15.jpeg";
 import blog_pic_16 from "./16.jpeg";
+import author_1 from "./19.jpeg";
 import blog_pic_2 from "./2.jpeg";
 import blog_pic_3 from "./3.jpeg";
 import blog_pic_4 from "./4.jpeg";
@@ -25,7 +26,7 @@ export const blogData = [
     date: "2024-08-18T14:23:00Z",
     category: "Development",
     author: "John Doe",
-    author_img: "https://example.com/images/authors/john-doe.jpg",
+    author_img: author_1,
   },
   {
     id: 2,
@@ -36,7 +37,7 @@ export const blogData = [
     date: "2024-08-17T10:45:00Z",
     category: "CSS",
     author: "Jane Smith",
-    author_img: "https://example.com/images/authors/jane-smith.jpg",
+    author_img: author_1,
   },
   {
     id: 3,
@@ -47,7 +48,7 @@ export const blogData = [
     date: "2024-08-16T08:30:00Z",
     category: "JavaScript",
     author: "Alex Johnson",
-    author_img: "https://example.com/images/authors/alex-johnson.jpg",
+    author_img: author_1,
   },
   {
     id: 4,
@@ -58,7 +59,7 @@ export const blogData = [
     date: "2024-08-15T15:00:00Z",
     category: "ReactJS",
     author: "Emily Davis",
-    author_img: "https://example.com/images/authors/emily-davis.jpg",
+    author_img: author_1,
   },
   {
     id: 5,
@@ -69,7 +70,7 @@ export const blogData = [
     date: "2024-08-14T09:10:00Z",
     category: "Development",
     author: "Michael Brown",
-    author_img: "https://example.com/images/authors/michael-brown.jpg",
+    author_img: author_1,
   },
   {
     id: 6,
@@ -80,7 +81,7 @@ export const blogData = [
     date: "2024-08-13T11:50:00Z",
     category: "CSS",
     author: "Sophia Wilson",
-    author_img: "https://example.com/images/authors/sophia-wilson.jpg",
+    author_img: author_1,
   },
   {
     id: 7,
@@ -91,7 +92,7 @@ export const blogData = [
     date: "2024-08-12T16:20:00Z",
     category: "Development",
     author: "Chris Lee",
-    author_img: "https://example.com/images/authors/chris-lee.jpg",
+    author_img: author_1,
   },
   {
     id: 8,
@@ -102,7 +103,7 @@ export const blogData = [
     date: "2024-08-11T13:30:00Z",
     category: "JavaScript",
     author: "Olivia Martinez",
-    author_img: "https://example.com/images/authors/olivia-martinez.jpg",
+    author_img: author_1,
   },
   {
     id: 9,
@@ -113,7 +114,7 @@ export const blogData = [
     date: "2024-08-10T12:45:00Z",
     category: "Development",
     author: "David Kim",
-    author_img: "https://example.com/images/authors/david-kim.jpg",
+    author_img: author_1,
   },
   {
     id: 10,
@@ -124,7 +125,7 @@ export const blogData = [
     date: "2024-08-09T14:00:00Z",
     category: "Development",
     author: "Lisa Roberts",
-    author_img: "https://example.com/images/authors/lisa-roberts.jpg",
+    author_img: author_1,
   },
   {
     id: 11,
@@ -135,7 +136,7 @@ export const blogData = [
     date: "2024-08-08T10:30:00Z",
     category: "JavaScript",
     author: "Kevin Harris",
-    author_img: "https://example.com/images/authors/kevin-harris.jpg",
+    author_img: author_1,
   },
   {
     id: 12,
@@ -146,7 +147,7 @@ export const blogData = [
     date: "2024-08-07T09:45:00Z",
     category: "ReactJS",
     author: "Maria Gonzalez",
-    author_img: "https://example.com/images/authors/maria-gonzalez.jpg",
+    author_img: author_1,
   },
   {
     id: 13,
@@ -157,7 +158,7 @@ export const blogData = [
     date: "2024-08-06T14:10:00Z",
     category: "CSS",
     author: "Daniel Wright",
-    author_img: "https://example.com/images/authors/daniel-wright.jpg",
+    author_img: author_1,
   },
   {
     id: 14,
@@ -168,7 +169,7 @@ export const blogData = [
     date: "2024-08-05T11:15:00Z",
     category: "Development",
     author: "Jessica Taylor",
-    author_img: "https://example.com/images/authors/jessica-taylor.jpg",
+    author_img: author_1,
   },
   {
     id: 15,
@@ -179,7 +180,7 @@ export const blogData = [
     date: "2024-08-04T13:40:00Z",
     category: "JavaScript",
     author: "Robert Wilson",
-    author_img: "https://example.com/images/authors/robert-wilson.jpg",
+    author_img: author_1,
   },
   {
     id: 16,
@@ -190,6 +191,6 @@ export const blogData = [
     date: "2024-08-03T16:25:00Z",
     category: "CSS",
     author: "Sarah Moore",
-    author_img: "https://example.com/images/authors/sarah-moore.jpg",
+    author_img: author_1,
   },
 ];
