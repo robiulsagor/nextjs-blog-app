@@ -54,7 +54,7 @@ const BlogPage = ({ params }) => {
           height={720}
           src={data?.image}
           alt=""
-          className="border-4 border-white rounded-sm"
+          className="border-4 border-white rounded-sm max-h-[620px] object-cover"
         />
         <h2 className="text-[26px] font-bold my-8">Introduction</h2>
         <p className="text-lg ">{data?.description}</p>
