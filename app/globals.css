@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .sidebar-link {
+    @apply border border-black flex items-center gap-4 text-[18px] md:text-[14px] lg:text-[18px] p-2 font-semibold shadow-[-7px_7px_0px_#000000] active:translate-y-1 active:-translate-x-1  active:shadow-[-4px_3px_0px_#000000];
+  }
+  .active {
+    @apply bg-gray-400;
+  }
+}
