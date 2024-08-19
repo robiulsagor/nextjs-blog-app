@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const BlogItem = ({ id, title, description, image, category }) => {
+  const truncate = (str, n) => {
+    return str.split(" ").slice(0, n).join(" ") + "...";
+  };
   return (
     <div className="max-w-[330px] sm:max-w-[300px] bg-white border border-black hover:shadow-[-7px_7px_0px_#000000]">
       <Link href={`/blogs/${id}`}>
@@ -23,7 +26,7 @@ const BlogItem = ({ id, title, description, image, category }) => {
           {title}
         </h2>
         <p className="text-sm text-gray-700 tracking-tight mb-3">
-          {description}
+          {truncate(description, 20)}
         </p>
 
         <Link

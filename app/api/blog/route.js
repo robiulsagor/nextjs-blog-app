@@ -10,8 +10,14 @@ const DBConnection = async () => {
 DBConnection();
 
 export async function GET() {
-  console.log("Get request hit");
-  return NextResponse.json({ msg: "Hello from get request" });
+  try {
+    const blogs = await BlogModel.find();
+    return NextResponse.json(blogs);
+  } catch (error) {
+    console.log(error);
+
+    return NextResponse.json("Something went wrong");
+  }
 }
 
 export async function POST(request) {

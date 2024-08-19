@@ -146,6 +146,9 @@ const AddBlogPage = () => {
             className="w-[200px] border p-2 focus:border-gray-500 outline-none"
             required
           >
+            <option value="" disabled>
+              Select
+            </option>
             <option value="Development">Development</option>
             <option value="CSS">CSS</option>
             <option value="JavaScript">JavaScript</option>

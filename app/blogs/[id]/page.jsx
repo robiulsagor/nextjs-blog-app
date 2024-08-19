@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import { blogData } from "@/app/Assets/assets";
 import Footer from "@/app/Components/Footer";
+import LoadingFullPage from "@/app/Components/LoadingFullPage";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,13 +9,20 @@ import { useEffect, useState } from "react";
 
 const BlogPage = ({ params }) => {
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const fetchPost = () => {
-    for (let i = 0; i < blogData.length; i++) {
-      if (Number(params.id) === blogData[i].id) {
-        setData(blogData[i]);
-        break;
-      }
+  const fetchPost = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(`http://localhost:3000/api/blog/${params.id}`);
+      const data = await res.json();
+      setData(data);
+      console.log(data);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+
+      console.log(error);
     }
   };
 
@@ -22,7 +30,9 @@ const BlogPage = ({ params }) => {
     fetchPost();
   }, []);
 
-  return data ? (
+  return loading ? (
+    <LoadingFullPage />
+  ) : data ? (
     <>
       <div className="bg-gray-300 px-5 py-5 md:px-12 lg:px-28">
         <div className="flex justify-between items-center">
@@ -41,6 +51,8 @@ const BlogPage = ({ params }) => {
           <Image
             src={data?.author_img}
             alt=""
+            width={55}
+            height={55}
             className="w-14 h-14 rounded-full mx-auto mt-10 border-2 border-white"
           />
 
@@ -56,88 +68,7 @@ const BlogPage = ({ params }) => {
           alt=""
           className="border-4 border-white rounded-sm max-h-[620px] object-cover"
         />
-        <h2 className="text-[26px] font-bold my-8">Introduction</h2>
-        <p className="text-lg ">{data?.description}</p>
-
-        <h3 className="text-[18px] font-bold my-8">
-          Some other related blogs. Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Corporis, maxime?
-        </h3>
-
-        <p className="text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          voluptates libero sequi autem voluptatum numquam nihil placeat
-          voluptate reprehenderit nostrum? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Mollitia, sapiente itaque autem eius
-          voluptatum aut.
-        </p>
-
-        <h3 className="text-[18px] font-bold my-8">subtitle:</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-          maxime odit vitae ea eaque delectus in facere fugiat. Assumenda
-          placeat accusamus ad ab iste! Non.
-        </p>
-
-        <h3 className="text-[18px] font-bold my-8">
-          Some other related blogs. Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Corporis, maxime?
-        </h3>
-
-        <p className="text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          voluptates libero sequi autem voluptatum numquam nihil placeat
-          voluptate reprehenderit nostrum? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Mollitia, sapiente itaque autem eius
-          voluptatum aut.
-        </p>
-
-        <h3 className="text-[18px] font-bold my-8">subtitle:</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-          maxime odit vitae ea eaque delectus in facere fugiat. Assumenda
-          placeat accusamus ad ab iste! Non.
-        </p>
-
-        <h3 className="text-[18px] font-bold my-8">
-          Some other related blogs. Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Corporis, maxime?
-        </h3>
-
-        <p className="text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          voluptates libero sequi autem voluptatum numquam nihil placeat
-          voluptate reprehenderit nostrum? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Mollitia, sapiente itaque autem eius
-          voluptatum aut.
-        </p>
-
-        <h3 className="text-[18px] font-bold my-8">subtitle:</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-          maxime odit vitae ea eaque delectus in facere fugiat. Assumenda
-          placeat accusamus ad ab iste! Non.
-        </p>
-
-        <h3 className="text-[18px] font-bold my-8">
-          Some other related blogs. Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Corporis, maxime?
-        </h3>
-
-        <p className="text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          voluptates libero sequi autem voluptatum numquam nihil placeat
-          voluptate reprehenderit nostrum? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Mollitia, sapiente itaque autem eius
-          voluptatum aut.
-        </p>
-
-        <h3 className="text-[18px] font-bold my-8">Conclusion:</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-          maxime odit vitae ea eaque delectus in facere fugiat. Assumenda
-          placeat accusamus ad ab iste! Non.
-        </p>
+        <p className="text-lg mt-5">{data?.description}</p>
 
         <div className="my-24">
           <h2 className="text-[20px] font-semibold text-gray-700">
