@@ -4,6 +4,9 @@ import Sidebar from "../Components/AdminComponents/Sidebar";
 
 import { Outfit } from "next/font/google";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const outfit = Outfit({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -12,6 +15,7 @@ const outfit = Outfit({
 function AdminLayout({ children }) {
   return (
     <div className={outfit.className}>
+      <ToastContainer />
       <div className=" relative transition duration-300">
         <Sidebar />
         <div className="ml-0 md:ml-[280px] lg:ml-[380px] relative">
