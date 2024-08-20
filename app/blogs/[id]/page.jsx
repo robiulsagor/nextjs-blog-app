@@ -14,15 +14,13 @@ const BlogPage = ({ params }) => {
   const fetchPost = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:3000/api/blog/${params.id}`);
+      const res = await fetch(`api/blog/${params.id}`);
       const data = await res.json();
       setData(data);
       console.log(data);
       setLoading(false);
     } catch (error) {
       setLoading(false);
-
-      console.log(error);
     }
   };
 
