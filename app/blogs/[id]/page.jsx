@@ -2,6 +2,7 @@
 "use client";
 import Footer from "@/app/Components/Footer";
 import LoadingFullPage from "@/app/Components/LoadingFullPage";
+import axios from "axios";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,13 +15,14 @@ const BlogPage = ({ params }) => {
   const fetchPost = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`api/blog/${params.id}`);
-      const data = await res.json();
+      const res = await axios(`/api/blog/${params.id}`);
+      const data = await res.data;
       setData(data);
       console.log(data);
       setLoading(false);
     } catch (error) {
       setLoading(false);
+      console.log(error.message);
     }
   };
 
