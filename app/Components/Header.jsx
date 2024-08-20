@@ -7,13 +7,13 @@ import { toast } from "react-toastify";
 
 const Header = () => {
   const [email, setEmail] = useState("");
-    const toastID = 'custom'
+  const toastID = "custom";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!email) {
-      toast.error("Please type your email!", { toastId: toastID});
+      toast.error("Please type your email!", { toastId: toastID });
       return;
     }
 
@@ -28,8 +28,7 @@ const Header = () => {
       }
       setEmail("");
     } catch (error) {
-      console.log(error);
-      toast.error("Error subscribing...", { toastId: toastID});
+      toast.error("Error subscribing...", { toastId: toastID });
     }
   };
   return (

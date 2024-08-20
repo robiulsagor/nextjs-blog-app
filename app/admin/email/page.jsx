@@ -17,7 +17,6 @@ function SubscriptionsPage() {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      console.log(error);
     }
   };
 
@@ -35,7 +34,6 @@ function SubscriptionsPage() {
         toast.error("Something went wrong deleting email!");
       }
     } catch (error) {
-      console.log(error);
       toast.error("Something went wrong deleting email!");
     }
   };

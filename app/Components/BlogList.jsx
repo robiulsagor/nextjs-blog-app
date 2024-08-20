@@ -23,7 +23,6 @@ const BlogList = () => {
       }
       setLoading(false);
     } catch (error) {
-      console.log(error);
       toast.error("Something went wrong fetching blogs!");
       setLoading(false);
     }
@@ -32,8 +31,6 @@ const BlogList = () => {
   useEffect(() => {
     fetchBlogs();
   }, []);
-
-  console.log(blogs);
 
   return (
     <div>

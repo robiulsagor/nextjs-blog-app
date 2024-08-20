@@ -14,8 +14,6 @@ export async function GET() {
     const blogs = await BlogModel.find();
     return NextResponse.json(blogs);
   } catch (error) {
-    console.log(error);
-
     return NextResponse.json("Something went wrong");
   }
 }
@@ -66,7 +64,6 @@ export async function POST(request) {
       message: "Blog created",
     });
   } catch (error) {
-    console.log(error.message);
     return NextResponse.json({
       success: false,
       message: `Failed to create blog !`,

@@ -18,11 +18,9 @@ const BlogPage = ({ params }) => {
       const res = await axios(`/api/blog/${params.id}`);
       const data = await res.data;
       setData(data);
-      console.log(data);
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      console.log(error.message);
     }
   };
 

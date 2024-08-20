@@ -18,7 +18,6 @@ function BlogListPage() {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      console.log(error);
     }
   };
 
@@ -34,7 +33,6 @@ function BlogListPage() {
       }
     } catch (error) {
       toast.error("Operation Failed deleting blog!");
-      console.log(error);
     }
   };
 

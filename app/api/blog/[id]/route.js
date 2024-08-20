@@ -28,8 +28,6 @@ export async function DELETE(request, { params }) {
       message: "Something went wrong",
     });
   } catch (error) {
-    console.log(error.message);
-
     return NextResponse.json({ success: false, message: error.message });
   }
 }
