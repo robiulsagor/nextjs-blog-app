@@ -55,11 +55,11 @@ const Sidebar = () => {
             View Blogs
           </Link>
           <Link
-            href="/admin/subscriptions"
-            className={`sidebar-link ${path === "subscriptions" && "active"}`}
+            href="/admin/email"
+            className={`sidebar-link ${path === "email" && "active"}`}
           >
             <MailIcon />
-            Subscriptions
+            Email Subscriptions
           </Link>
           {/* sidebar links ends here */}
         </div>

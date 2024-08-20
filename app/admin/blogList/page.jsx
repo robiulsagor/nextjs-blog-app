@@ -42,8 +42,6 @@ function BlogListPage() {
     fetchBlogs();
   }, []);
 
-  console.log(blogs);
-
   return (
     <div className=" px-5 sm:px-16 pt-16 pb-10">
       <h1 className="my-5 text-2xl font-medium text-gray-600">Blog List</h1>
@@ -74,7 +72,7 @@ function BlogListPage() {
                     {blog.author}
                   </td>
                   <td>{blog.title}</td>
-                  <td>2022-01-01</td>
+                  <td>{new Date(blog.date).toDateString()}</td>
                   <td className=" cursor-pointer text-center mx-auto">
                     <X
                       className=" mx-auto"

@@ -6,6 +6,8 @@ const outfit = Outfit({
   weight: ["400", "500", "600", "700"],
 });
 
+import "react-toastify/dist/ReactToastify.css";
+
 export const metadata = {
   title: "Most Popular Blog",
   description: "Most popular blog website",

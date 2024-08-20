@@ -1,6 +1,37 @@
+"use client";
+
+import axios from "axios";
 import Link from "next/link";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Header = () => {
+  const [email, setEmail] = useState("");
+    const toastID = 'custom'
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!email) {
+      toast.error("Please type your email!", { toastId: toastID});
+      return;
+    }
+
+    try {
+      const res = await axios.post("/api/email", { email });
+      if (res.data.success) {
+        toast.success("Subscribed successfully");
+      } else {
+        toast.warning(res?.data?.message || "Something went wrong...", {
+          toastId: toastID,
+        });
+      }
+      setEmail("");
+    } catch (error) {
+      console.log(error);
+      toast.error("Error subscribing...", { toastId: toastID});
+    }
+  };
   return (
     <div className="px-5 py-5 md:px-12 lg:px-28">
       <div className="flex justify-between items-center">
@@ -19,10 +50,15 @@ const Header = () => {
           Reprehenderit earum in quod error qui sint obcaecati minima quia
           adipisci. Deleniti vitae natus
         </p>
-        <form className="max-w-[500px] mx-auto border border-black mt-10 flex justify-between scale-75 sm:scale-100 shadow-[-7px_7px_0px_0px_rgba(0,0,0,1)]">
+        <form
+          onSubmit={handleSubmit}
+          className="max-w-[500px] mx-auto border border-black mt-10 flex justify-between scale-75 sm:scale-100 shadow-[-7px_7px_0px_0px_rgba(0,0,0,1)]"
+        >
           <input
             type="email"
             name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             className="w-full  pl-4 outline-none"
           />
