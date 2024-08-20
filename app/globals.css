@@ -22,3 +22,26 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
+.blog-content p {
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+}
+.blog-content h1 {
+  /* padding: 0.5rem 0;
+  margin: 0.5rem 0; */
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+.blog-content h2 {
+  /* padding: 0.5rem 0;
+  margin: 0.5rem 0; */
+  font-size: 1.875rem;
+  line-height: 1.2;
+}
+.blog-content h3 {
+  /* padding: 0.5rem 0;
+  margin: 0.5rem 0; */
+  font-size: 1.5rem;
+  line-height: 1.2;
+}

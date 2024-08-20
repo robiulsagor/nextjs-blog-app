@@ -13,7 +13,7 @@ const AddBlogPage = () => {
     description: "",
     category: "",
     author: "Robiul Islam Sagar",
-    author_img: "http://localhost:3000/19.jpeg",
+    author_img: "/author.jpeg",
   });
 
   const handleChange = (e) => {

@@ -68,7 +68,10 @@ const BlogPage = ({ params }) => {
           alt=""
           className="border-4 border-white rounded-sm max-h-[620px] object-cover"
         />
-        <p className="text-lg mt-5">{data?.description}</p>
+        <p
+          className="text-lg mt-5 blog-content"
+          dangerouslySetInnerHTML={{ __html: data?.description }}
+        ></p>
 
         <div className="my-24">
           <h2 className="text-[20px] font-semibold text-gray-700">

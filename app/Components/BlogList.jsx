@@ -16,7 +16,11 @@ const BlogList = () => {
     try {
       const res = await axios.get("/api/blog");
       const data = await res.data;
-      setBlogs(data);
+      if (data) {
+        setBlogs(data);
+      } else {
+        setBlogs([]);
+      }
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -28,6 +32,8 @@ const BlogList = () => {
   useEffect(() => {
     fetchBlogs();
   }, []);
+
+  console.log(blogs);
 
   return (
     <div>

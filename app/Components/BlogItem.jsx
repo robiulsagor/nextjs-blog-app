@@ -25,9 +25,10 @@ const BlogItem = ({ id, title, description, image, category }) => {
         <h2 className="mb-2 text-lg font-medium tracking-tight text-gray-900">
           {title}
         </h2>
-        <p className="text-sm text-gray-700 tracking-tight mb-3">
-          {truncate(description, 20)}
-        </p>
+        <p
+          className="text-sm text-gray-700 tracking-tight mb-3"
+          dangerouslySetInnerHTML={{ __html: truncate(description, 20) }}
+        ></p>
 
         <Link
           href={`/blogs/${id}`}
