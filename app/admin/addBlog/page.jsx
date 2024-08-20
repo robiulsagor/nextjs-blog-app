@@ -55,7 +55,7 @@ const AddBlogPage = () => {
   };
 
   return (
-    <div className="  px-5 md:px-16 pt-20 pb-10">
+    <div className="px-5 md:px-16 pt-20 pb-10">
       <form
         className="flex flex-col gap-6 w-full lg:w-[500px]"
         onSubmit={handleSubmit}

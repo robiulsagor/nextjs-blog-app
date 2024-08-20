@@ -31,7 +31,7 @@ const BlogItem = ({ id, title, description, image, category }) => {
 
         <Link
           href={`/blogs/${id}`}
-          className="flex items-center gap-1 font-semibold text-center py-2"
+          className="inline-flex items-center gap-1 font-semibold text-center py-2"
         >
           Read More <ArrowRight size={16} />
         </Link>

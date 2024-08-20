@@ -59,9 +59,9 @@ const BlogList = () => {
           JavaScript
         </button>
         <button
-          onClick={() => setMenu("ReactJS")}
+          onClick={() => setMenu("React")}
           className={
-            menu === "ReactJS" ? "px-4 py-1 rounded-sm bg-black text-white" : ""
+            menu === "React" ? "px-4 py-1 rounded-sm bg-black text-white" : ""
           }
         >
           ReactJS
